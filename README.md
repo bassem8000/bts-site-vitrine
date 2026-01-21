@@ -7,7 +7,7 @@ Isaac LUTONADIO étudiant B : Collaborateur
 
 Projet :
 
-Créer un mini-site vitrine pour une entreprise fictive : Chocolatine, Site de vente de viennoiseries (header, présentation, services, contact, footer)
+Créer un mini-site vitrine pour une entreprise fictive : Le Pavillon doré, Site de restaurant de luxe (header, présentation, services, contact, footer)
 
 Règles Git :
 
