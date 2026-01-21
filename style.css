@@ -1,0 +1,36 @@
+:root {
+    --couleur_primaire: #0A0B10;
+    --couleur_secondaire: #D4AF37;
+    --couleur_texte: #E5E5E5;
+    --police_principale: 'Helvetica Neue', sans-serif;
+}
+
+body {
+
+    background-image: linear-gradient(rgba(10, 11, 16, 0.7), rgba(10, 11, 16, 0.7)), url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--couleur_texte);
+    font-family: var(--police_principale);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--couleur_primaire);
+    padding: 20px;
+    border-bottom: 2px solid var(--couleur_secondaire);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--couleur_primaire);
+    border-top: 2px solid var(--couleur_secondaire);
+    width: 100%;
+    bottom: 0;
+}
