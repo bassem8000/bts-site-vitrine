@@ -14,6 +14,22 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/* ANIMATION D’OUVERTURE */
+.page-load {
+    animation: pageFade 1.2s ease-out forwards;
+}
+
+@keyframes pageFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* HEADER */
 .header {
     display: flex;
@@ -21,8 +37,21 @@ body {
     justify-content: space-between;
     padding: 20px;
     background-color: #D4AF37;
+    animation: slideDown 1s ease-out;
 }
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FOOTER */
 .footer {
     display: flex;
     align-items: center;
@@ -67,6 +96,7 @@ p {
     max-width: 900px;
     margin: 40px auto;
     overflow: hidden;
+    animation: fadeUp 1.4s ease-out;
 }
 
 /* cacher les boutons radio */
@@ -77,25 +107,22 @@ p {
 /* zone qui contient les images */
 .slides {
     display: flex;
-    width: 400%; /* 4 images */
+    width: 300%;
     transition: transform 1s ease;
 }
 
-/* chaque image prend 1/4 de la zone */
+/* chaque image prend 1/3 de la zone */
 .slide {
-    width: 25%;
+    width: 33.33%;
     height: auto;
 }
 
 /* défilement selon le radio coché */
-#s2:checked ~ .slides {
-    transform: translateX(-25%);
+#e2:checked ~ .slides {
+    transform: translateX(-33.33%);
 }
-#s3:checked ~ .slides {
-    transform: translateX(-50%);
-}
-#s4:checked ~ .slides {
-    transform: translateX(-75%);
+#e3:checked ~ .slides {
+    transform: translateX(-66.66%);
 }
 
 /* dots */
@@ -115,10 +142,80 @@ p {
     opacity: 0.5;
 }
 
-/* CORRECTION : ajouter la virgule */
-#s1:checked ~ .dots label[for="s1"],
-#s2:checked ~ .dots label[for="s2"],
-#s3:checked ~ .dots label[for="s3"],
-#s4:checked ~ .dots label[for="s4"] {
+/* dot actif */
+#e1:checked ~ .dots label[for="e1"],
+#e2:checked ~ .dots label[for="e2"],
+#e3:checked ~ .dots label[for="e3"] {
     opacity: 1;
+}
+
+/* ========================= */
+/* PAGE EVENEMENT */
+/* ========================= */
+
+.event-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 60px auto 30px;
+    padding: 0 20px;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.event-header h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    color: #D4AF37;
+}
+
+.event-header p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+/* Slider spécifique événement */
+.event-slider {
+    animation: fadeUp 1.5s ease forwards;
+}
+
+/* Animation douce */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TEXTES DYNAMIQUES */
+.event-texts {
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.event-text {
+    display: none;
+}
+
+#e1:checked ~ .event-texts #t1,
+#e2:checked ~ .event-texts #t2,
+#e3:checked ~ .event-texts #t3 {
+    display: block;
+}
+
+.event-text h2 {
+    font-size: 26px;
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+.event-text p {
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.6;
 }
